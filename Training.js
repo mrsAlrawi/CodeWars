@@ -26,3 +26,17 @@ function getCount(words) {
 	}
   return obj;
 }
+
+function squareDigits(num){
+	var string = num.toString();
+	var result = "";
+	for (var i = 0; i < string.length; i++) {
+		var x = parseInt(string[i])*parseInt(string[i]);
+		result+= x.toString();
+	}
+	return parseInt(result);
+}
+
+function squareDigits(num){
+  return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+}
