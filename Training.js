@@ -75,3 +75,51 @@ var isSquare = function(n){
 function disemvowel(str) {
   return str.replace(/[aeiou]/gi, '');
 }
+var flatten = function (array){
+  // TODO: Program me
+}
+
+var flatten = function (array){
+ 	return [].concat.apply([],array)
+}
+
+//my solution
+function ipToInt32(dot) 
+{
+    var d = dot.split('.');
+    return ((((((+d[0])*256)+(+d[1]))*256)+(+d[2]))*256)+(+d[3]);
+}
+
+//code wars solution 
+function ipToInt32(ip){
+   return ip.split(".").reduce(function(int,v){ return int*256 + +v } )
+}
+
+// my solution 
+function duplicateEncode(word){
+    var result='';
+    var word= word.toLowerCase();
+    for(var i=0; i<word.length; i++){
+    	var count=0;
+    	for (var j = 0; j < word.length; j++) {
+    		if(word[j] === word[i])
+    			count++
+    	}
+    	if(count>1)
+    		result+= ')'
+    	else
+    		result+= '('
+    }
+    return result;
+}
+
+//code war solution
+function duplicateEncode(word){
+  return word
+    .toLowerCase()
+    .split('')
+    .map( function (a, i, w) {
+      return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+    })
+    .join('');
+}
