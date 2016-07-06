@@ -150,4 +150,17 @@ function findEmployeesRole(name) {
 		}
 	}
 	return 'Does not work here!';
+};
+
+function sometimes(fn) {
+  var count = 0;
+  
+  return function () {
+    count++;
+    
+    if (count > 3 && count % 2 === 0)
+      return 'hmm, I don\'t know!';
+    
+    return fn.apply(null, arguments);
+  };
 }
