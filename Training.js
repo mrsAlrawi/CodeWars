@@ -75,16 +75,13 @@ var isSquare = function(n){
 function disemvowel(str) {
   return str.replace(/[aeiou]/gi, '');
 }
-var flatten = function (array){
-  // TODO: Program me
-}
 
 var flatten = function (array){
  	return [].concat.apply([],array)
 }
 
 //my solution
-function ipToInt32(dot) 
+ function ipToInt32(dot) 
 {
     var d = dot.split('.');
     return ((((((+d[0])*256)+(+d[1]))*256)+(+d[2]))*256)+(+d[3]);
@@ -163,4 +160,15 @@ function sometimes(fn) {
     
     return fn.apply(null, arguments);
   };
-}mas
+}
+
+var isPP = function(n){
+	var sqrt = Math.sqrt(n);
+	for (var i = 1; i < sqrt+1; i++) {
+		for (var j = 1; j < sqrt+1; j++) {
+				if(Math.pow(i,j) === n)
+					return [i,j];
+		}
+	}
+  return null;
+}
