@@ -172,3 +172,45 @@ var isPP = function(n){
 	}
   return null;
 }
+
+function iqTest(numbers){
+	var splited = numbers.split(" ");
+	var odds=0;
+	var evens=0;
+	for (var i = 0; i < splited.length; i++) {
+		if(splited[i]%2 === 0){
+			evens++;
+		}else{
+			odds++;
+		}
+	}
+	if(evens>odds){
+		for (var i = 0; i < splited.length; i++) {
+			if(splited[i]%2 !==0){
+				return ++i;
+			}
+		}
+	}else{
+		for (var i = 0; i < splited.length; i++) {
+			if(splited[i]%2 === 0)
+				return ++i;
+		}
+	}
+}
+
+function round(number){
+	var y = number.toString().split(".");
+	if(y[1] === undefined)
+	return  parseInt(y[0]);
+	return parseInt(y[1][0])>=5? parseInt(y[0])+1 : parseInt(y[0])
+}
+
+function ceil(number){
+	var splited = number.toString().split(".");
+	return splited[1] === undefined? parseInt(splited[0]) : parseInt(splited[0])+1;
+}
+
+function floor(number){
+	var splited = number.toString().split(".");
+	return parseInt(splited[0]);
+}
