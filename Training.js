@@ -215,7 +215,6 @@ function floor(number){
 	return parseInt(splited[0]);
 }
 
-function hsbjh(){
-
-	return 
+function sqr(x){
+	return x*x;
 }
